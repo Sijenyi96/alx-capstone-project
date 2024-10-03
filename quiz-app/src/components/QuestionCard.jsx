@@ -82,79 +82,65 @@ const QuestionCard = () => {
 
   return (
           <div>
-           
-            <div className="flex flex-col items-center justify-center p-4 bg-gray-100">   
-          <div className="flex items-center border border-gray-300 rounded w-full max-w-md mb-4">
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search for questions..."
-              className="w-full p-2 outline-none"
-            />
-            <button
-              onClick={handleSearchClick}
-              className="p-2 text-blue-500"
-              aria-label="search"
-            >
-              <AiOutlineSearch size={24} />
-            </button>
-          </div>
-
-          <div className="flex flex-col w-full max-w-md">
-            <label className="mb-2">Category:</label>
-            <select
-              value={category}
-              className="mb-4 p-2 border border-gray-300 rounded"
-              onChange={(e) => setCategory(e.target.value)}>
-              <option value={9}>General Knowledge</option>
-              <option value={21}>Sports</option>
-              <option value={23}>History</option>
-              {/* Add more categories as needed */}
-            </select>
-
-            <label className="mb-2">Difficulty:</label>
-            <select
-              value={difficulty}
-              onChange={(e) => setDifficulty(e.target.value)}
-              className="mb-4 p-2 border border-gray-300 rounded"
-            >
-              <option value="">Difficult</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </div>
-
-          <button
-            onClick={handleSearchClick}
-             
-             className=" bg-blue-500 text-white py-2 rounded mb-4 w-full max-w-md"
-         
-          >
-            Fetch Quizzes
-          </button>
-
-          {loading && <div>Loading quizzes...</div>}
-          {errorMessage && (
-            <div className="mt-4 text-red-500 w-full max-w-md">{errorMessage}</div>
-          )}
-
-          <div className="mb-4 w-full max-w-md">
-            <button onClick={handleStartQuiz} type="submit" className="w-full bg-blue-500 text-white py-2 rounded">Start Quiz</button>
-          </div>
-        </div>
-
-        {quizStarted && !quizEnded && filteredQuestions && filteredQuestions.length > 0 && currentQuestionIndex < filteredQuestions.length && (
-          <div className='w-full max-w-md'>
-            <h2>Question {currentQuestionIndex + 1}/{filteredQuestions.length}</h2>
-
-            {filteredQuestions[currentQuestionIndex]?.question && (
-              <p>{filteredQuestions[currentQuestionIndex].question}</p>
-            )}
-            
-            {Array.isArray(filteredQuestions[currentQuestionIndex]?.incorrect_answers) &&
-              filteredQuestions[currentQuestionIndex].incorrect_answers.map((answer, index) => (
+              <div className="flex flex-col items-center justify-center p-4 bg-gray-100">   
+                   <div className="flex items-center border border-gray-300 rounded w-full max-w-md mb-4">
+                      <input
+                          type="text"
+                          value={searchQuery}
+                          onChange={(e) => setSearchQuery(e.target.value)}
+                          placeholder="Search for questions..."
+                          className="w-full p-2 outline-none"
+                      />
+                      <button
+                          onClick={handleSearchClick}
+                          className="p-2 text-blue-500"
+                          aria-label="search"
+                      >
+                           <AiOutlineSearch size={24} />
+                      </button>
+                   </div>
+                   <div className="flex flex-col w-full max-w-md">
+                       <label className="mb-2">Category:</label>
+                       <select
+                           value={category}
+                           className="mb-4 p-2 border border-gray-300 rounded"
+                           onChange={(e) => setCategory(e.target.value)}>
+                               <option value={9}>General Knowledge</option>
+                               <option value={21}>Sports</option>
+                               <option value={23}>History</option>
+                       </select>
+                       <label className="mb-2">Difficulty:</label>
+                       <select
+                           value={difficulty}
+                           onChange={(e) => setDifficulty(e.target.value)}
+                           className="mb-4 p-2 border border-gray-300 rounded">
+                               <option value="">Difficult</option>
+                               <option value="easy">Easy</option>
+                               <option value="medium">Medium</option>
+                               <option value="hard">Hard</option>
+                       </select>
+                   </div>
+                   <button
+                        onClick={handleSearchClick}
+                        className=" bg-blue-500 text-white py-2 rounded mb-4 w-full max-w-md">
+                        Fetch Quizzes
+                   </button>
+                   {loading && <div>Loading quizzes...</div>}
+                   {errorMessage && (
+                  <div className="mt-4 text-red-500 w-full max-w-md">{errorMessage}</div>
+                  )}
+                  <div className="mb-4 w-full max-w-md">
+                       <button onClick={handleStartQuiz} type="submit" className="w-full bg-blue-500 text-white py-2 rounded">Start Quiz</button>
+                  </div>
+            </div>
+           {quizStarted && !quizEnded && filteredQuestions && filteredQuestions.length > 0 && currentQuestionIndex < filteredQuestions.length && (
+               <div className='w-full max-w-md'>
+                  <h2>Question {currentQuestionIndex + 1}/{filteredQuestions.length}</h2>
+                  {filteredQuestions[currentQuestionIndex]?.question && (
+                  <p>{filteredQuestions[currentQuestionIndex].question}</p>
+                 )}
+                {Array.isArray(filteredQuestions[currentQuestionIndex]?.incorrect_answers) &&
+                filteredQuestions[currentQuestionIndex].incorrect_answers.map((answer, index) => (
                 <label key={index} className="block text-gray-700">
                   <input
                     type="checkbox"
@@ -189,11 +175,8 @@ const QuestionCard = () => {
             <button onClick={handleStartQuiz} className="w-full bg-blue-500 text-white py-2 rounded">Restart Quiz</button>
           </div>
         )}
-      </div>
-      
-    
-    
-  );
+    </div>
+      );
 };
 
 export default QuestionCard;

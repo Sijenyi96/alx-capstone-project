@@ -22,8 +22,7 @@ function RegisterForm() {
   };
 
   return (
-    
-        <div>
+       <div>
             <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
                <form onSubmit={handleSubmit}  className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
                   <div className="mb-4" >
@@ -68,8 +67,7 @@ function RegisterForm() {
               </form>
           </div>
        </div>
-   
-  );
+    );
 };
 
 export default RegisterForm;

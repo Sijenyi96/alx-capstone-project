@@ -8,19 +8,19 @@ import QuestionCard from './components/QuestionCard';
 
 function App() {
   return (
-    <div>
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/start" element={<QuizStart/>} />
-        <Route path="/Search Questions" element={<QuestionCard/>} />
-      </Routes>
-    </Router>
-    </div>
-  );
-}
+         <div>
+            <Router>
+                 <Routes>
+                     <Route path="/" element={<HomePage />} />
+                     <Route path="/register" element={<RegisterForm />} />
+                     <Route path="/login" element={<LoginPage />} />
+                     <Route path="/start" element={<QuizStart/>} />
+                     <Route path="/Search Questions" element={<QuestionCard/>} />
+                </Routes>
+            </Router>
+         </div>
+        );
+     }
 
 export default App;
 
