@@ -15,7 +15,7 @@ function App() {
                      <Route path="/register" element={<RegisterForm />} />
                      <Route path="/login" element={<LoginPage />} />
                      <Route path="/start" element={<QuizStart/>} />
-                     <Route path="/Search Questions" element={<QuestionCard/>} />
+                     <Route path="/search-questions" element={<QuestionCard/>} />
                 </Routes>
             </Router>
          </div>
