@@ -73,13 +73,14 @@ const QuestionCard = () => {
     }
   };
 
-  const handleStartQuiz = () => {
+  const handleStartQuiz = async() => {
     setQuizStarted(true);
     setQuizEnded(false);
     setScore(0);
     setCurrentQuestionIndex(0);
     setSelectedAnswer('');
     setFilteredQuestions([]);
+   await fetchQuestions();
   };
 
   const getAnswers = (question) => {
@@ -129,11 +130,7 @@ const QuestionCard = () => {
             <option value="hard">Hard</option>
           </select>
         </div>
-        <button
-          onClick={handleSearchClick}
-          className="bg-blue-500 text-white py-2 rounded mb-4 w-full max-w-md">
-          Fetch Quizzes
-        </button>
+       
         {loading && <div>Loading quizzes...</div>}
         {errorMessage && (
           <div className="mt-4 text-red-500 w-full max-w-md">{errorMessage}</div>
