@@ -9,7 +9,7 @@ function QuizStart() {
                       Are you ready to start the quizzes? click the start button to start.
                     </p>
                     <h1 className="text-4xl font-bold text-blue-500 text-center mb-6">All the best!</h1>
-                    <Link to="/Search Questions">
+                    <Link to="/search-questions">
                        <button type="submit" className="w-full bg-blue-500 text-white py-2  rounded">Start Now</button>
                     </Link>
                 </form>
