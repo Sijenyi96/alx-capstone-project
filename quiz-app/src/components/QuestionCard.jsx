@@ -114,10 +114,11 @@ const QuestionCard = () => {
             value={category}
             className="mb-4 p-2 border border-gray-300 rounded"
             onChange={(e) => setCategory(e.target.value)}>
-            <option value="">Select Category</option>
-            <option value={9}>General Knowledge</option>
-            <option value={21}>Sports</option>
-            <option value={23}>History</option>
+            <option>Select Category</option>
+            <option>General Knowledge</option>
+            <option>Sports</option>
+            <option>History</option>
+            <option>Science</option>
           </select>
           <label className="mb-2">Difficulty:</label>
           <select
@@ -142,13 +143,13 @@ const QuestionCard = () => {
         </div>
       </div>
       {quizStarted && !quizEnded && filteredQuestions.length > 0 && (
-        <div className='w-full max-w-md'>
+          <div className="flex flex-col w-full  items-center justify-center p-4 bg-gray-100">
           <h2>Question {currentQuestionIndex + 1}/{filteredQuestions.length}</h2>
           {filteredQuestions[currentQuestionIndex]?.question && (
             <p>{filteredQuestions[currentQuestionIndex].question}</p>
           )}
           {getAnswers(filteredQuestions[currentQuestionIndex]).map((answer, index) => (
-            <label key={index} className="block text-gray-700">
+            <label key={index} className=" flex w-full  items-center justify-center block text-gray-700">
               <input
                 type="radio"
                 value={answer}
@@ -158,14 +159,14 @@ const QuestionCard = () => {
               {answer}
             </label>
           ))}
-          <button onClick={handleSubmitAnswer} className="w-full bg-blue-500 text-white py-2 rounded">Submit Answer</button>
+          <button onClick={handleSubmitAnswer} className="mb-4 bg-blue-500 text-white w-full max-w-md py-2 rounded">Submit Answer</button>
         </div>
       )}
       {quizStarted && quizEnded && (
-        <div className='w-full max-w-md'>
+       <div className="flex flex-col w-full  items-center justify-center p-4 bg-gray-100">
           <h2>Quiz Ended</h2>
           <p>Your score: {score}/{filteredQuestions.length}</p>
-          <button onClick={handleStartQuiz} className="w-full bg-blue-500 text-white py-2 rounded">Restart Quiz</button>
+          <button onClick={handleStartQuiz} className="w-full bg-blue-500 text-white w-full max-w-md py-2 rounded">Restart Quiz</button>
         </div>
       )}
     </div>
