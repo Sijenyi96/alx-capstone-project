@@ -24,7 +24,7 @@ function RegisterForm() {
     <div>
       <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-gray-100">
         <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
-          <h1 className="text-4xl font-bold text-blue-500 mb-6">You don't have an account? Register here to continue!</h1>
+          <h1 className="text-4xl font-bold text-blue-500 mb-6">Register Form</h1>
 
           <div className="mb-4">
             <label className="block font-bold mb-1">Username:</label>

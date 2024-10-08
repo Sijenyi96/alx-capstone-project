@@ -16,6 +16,9 @@ function HomePage() {
                       <Link to="/register">
                           <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded">Register Here!</button>
                       </Link>
+                      <Link to="/login">
+                          <button className="mt-4 px-6 py-2 bg-blue-600 text-white rounded">Login Here!</button>
+                      </Link>
                  </div>
          );
 }

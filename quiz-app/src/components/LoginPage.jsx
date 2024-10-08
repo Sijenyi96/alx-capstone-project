@@ -48,9 +48,7 @@ function LoginPage() {
       <div className="flex flex-col items-center justify-center min-h-screen mb-4 p-4 bg-gray-100">
         <form onSubmit={handleLogin} className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
           <div className="mb-4">
-            <h1 className="text-4xl font-bold text-blue-500 mb-6">
-              Login here with your email account to access the quizzes
-            </h1>
+            <h1 className="text-4xl font-bold text-blue-500 mb-6"> Login</h1>
             <label className="block font-bold text-gray-700">Email</label>
             <input
               type="email"

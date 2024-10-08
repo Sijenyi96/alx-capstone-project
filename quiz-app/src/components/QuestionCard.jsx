@@ -98,6 +98,7 @@ const QuestionCard = () => {
   return (
     <div>
       <div className="flex flex-col items-center justify-center p-4 bg-gray-100">
+      <h2 className="text-4xl font-bold text-blue-500 mb-6" > Welcome Quizzes</h2>
         <div className="flex items-center border border-gray-300 rounded w-full max-w-md mb-4">
           <input
             type="text"
