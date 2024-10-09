@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom'; 
 
 function LoginPage() {
+   // State variables to manage user input (email, password), login status, and 'remember me' checkbox
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -9,7 +10,7 @@ function LoginPage() {
 
   const navigate = useNavigate(); 
 
-  
+   // useEffect hook to load saved email from localStorage if 'remember me' was checked
   useEffect(() => {
     const savedEmail = localStorage.getItem("email");
     if (savedEmail) {
@@ -17,19 +18,21 @@ function LoginPage() {
       setIsChecked(true); 
     }
   }, []);
-
+  
+    // Handle the login form submission
   const handleLogin = (e) => {
     e.preventDefault();
 
     
-    if (isChecked) {
+    // If 'remember me' is checked, save the email in localStorage
+   if (isChecked) {
       localStorage.setItem("email", email);
     } else {
-      
+    // If unchecked, remove the saved email from localStorage
       localStorage.removeItem("email");
     }
 
-    
+      //check if both email and password are filled
     if (email && password) {
       setIsLoggedIn(true);
 
@@ -39,6 +42,7 @@ function LoginPage() {
     }
   };
 
+   // Handle 'remember me' checkbox
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
